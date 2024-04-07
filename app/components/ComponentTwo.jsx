@@ -1,13 +1,7 @@
-'use client'
-import { useState, useEffect } from 'react';
 import { getPosts } from './ComponentOne';
 
-export default function ComponentTwo() {
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        getPosts(setPosts)
-    }, []); // The empty array ensures this effect runs only once after the initial render
+export default async function ComponentTwo() {
+    const posts = await getPosts()
 
     return (
         <div>
